@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let idade = parseInt(window.prompt("Informe sua idade"));
+        let cnh;
+
+        if(idade < 18){
+            window.alert("Você é menor de idade e não pode digiir");
+        } 
+
+        if(idade >=18){
+            cnh = confirm("Você tem CNH?");
+                if(cnh == true){
+                    window.alert("Você pode digir");
+                }else{
+                    window.alert("Você não pode dirigir pois não é habilitado");
+                }
+        }
+    
+    </script>
+</body>
+</html>
