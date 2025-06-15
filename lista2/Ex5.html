@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>While Multiplos de 3</h2>
+    <p id="demo"></p>
+    <script>
+        let i = 1;
+        let texto = "";
+
+        while(i<=30){
+            if(i%3 ==0){
+                texto += "O numero " + i + " é multiplo de 3" +  "<br>";
+            }
+            i++
+        }
+        document.getElementById("demo").innerHTML=texto;
+    </script>
+</body>
+</html>
