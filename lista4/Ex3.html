@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="mostrarAlerta()">
+    <p id="dimensoes"></p>
+    <script>
+        function mostrarAlerta() {
+            alert("Página carregada!");
+            mostrarDimensoes();
+        }
+
+        function mostrarDimensoes() {
+            document.getElementById("dimensoes").innerHTML =
+                "Largura: " + window.innerWidth + "px<br>Altura: " + window.innerHeight + "px";
+        }
+
+        window.onresize = mostrarDimensoes;
+    </script>
+</body>
+</html>

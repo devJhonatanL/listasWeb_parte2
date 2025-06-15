@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="texto" id="campoTexto" placeholder="Digite algo..." onkeydown="mostrarTecla(event)">
+    <p id="teclaPressionada"></p>
+    <script>
+        function mostrarTecla(event) {
+            document.getElementById("teclaPressionada").innerHTML = "Tecla pressionada: " + event.key;
+        }
+    </script>
+</body>
+</html>
