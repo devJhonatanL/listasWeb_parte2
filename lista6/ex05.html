@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+</head>
+<body>
+    <!--
+        Simule diferentes tipos de erro JavaScript (ReferenceError, SyntaxError, TypeError) e
+        trate cada um com uma mensagem específica dentro de blocos try...catch.
+    -->
+
+     <h2>Tratamento de Erros</h2>
+
+    <div id="mensagens"></div>
+
+    <script>
+        const mensagens = document.getElementById("mensagens");
+
+        // Função para exibir mensagem na tela
+        function mostrar(mensagem) {
+            const p = document.createElement("p");
+            p.textContent = mensagem;
+            mensagens.appendChild(p);
+        }
+
+        // 1. ReferenceError
+        try {
+            console.log(variavelInexistente); // variável não declarada
+        } catch (erro) {
+            if (erro instanceof ReferenceError) {
+                mostrar("🛑 ReferenceError: variável não declarada.");
+            } else {
+                mostrar("Erro desconhecido: " + erro.message);
+            }
+        }
+
+        // 2. SyntaxError
+        try {
+            eval("function () {"); // erro proposital de sintaxe
+        } catch (erro) {
+            if (erro instanceof SyntaxError) {
+                mostrar("🛑 SyntaxError: erro de sintaxe no código.");
+            } else {
+                mostrar("Erro desconhecido: " + erro.message);
+            }
+        }
+
+        // 3. TypeError
+        try {
+            let numero = 123;
+            numero(); // tentar chamar número como função
+        } catch (erro) {
+            if (erro instanceof TypeError) {
+                mostrar("🛑 TypeError: tentativa de uso incorreto de tipo.");
+            } else {
+                mostrar("Erro desconhecido: " + erro.message);
+            }
+        }
+    </script>
+</body>
+</html>

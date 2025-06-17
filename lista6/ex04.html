@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+<body>
+    <!--
+        Crie um exemplo onde você use finally para limpar um campo de input,
+        independetemente do resultado do tratamento de erro com try...catch.
+    -->
+
+    <input type="text" id="entrada" placeholder="Digite um número">
+    <button onclick="processar()">Enviar</button>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function processar() {
+            const input = document.getElementById("entrada");
+            const mensagem = document.getElementById("mensagem");
+            const valor = input.value;
+
+            try {
+                const numero = Number(valor);
+
+                if (isNaN(numero)) {
+                    throw "Valor inválido. Digite um número.";
+                }
+
+                mensagem.style.color = "green";
+                mensagem.innerText = "✅ Número válido: " + numero;
+
+            } catch (erro) {
+                mensagem.style.color = "red";
+                mensagem.innerText = "❌ Erro: " + erro;
+
+            } finally {
+                // Limpa o campo de input, mesmo que ocorra erro
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
